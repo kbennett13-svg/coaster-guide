@@ -303,6 +303,144 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    @media (max-width: 520px) {
+      :root {
+        --radius: 18px;
+      }
+
+      .page {
+        padding: max(12px, env(safe-area-inset-top)) 12px calc(18px + env(safe-area-inset-bottom));
+      }
+
+      .hero {
+        padding: 16px 14px;
+      }
+
+      .eyebrow {
+        margin-bottom: 6px;
+        font-size: 0.7rem;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+        margin-bottom: 8px;
+        max-width: none;
+      }
+
+      .hero p,
+      .section-copy,
+      .subtle,
+      .food-pill,
+      .note {
+        font-size: 0.86rem;
+      }
+
+      .top-links {
+        top: 8px;
+        gap: 6px;
+        margin-top: 10px;
+        padding: 8px 10px;
+      }
+
+      .pill-link {
+        padding: 8px 10px;
+        font-size: 0.78rem;
+      }
+
+      .section {
+        margin-top: 12px;
+      }
+
+      .section-card {
+        padding: 14px;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+        margin-bottom: 6px;
+      }
+
+      .mini-grid,
+      .coaster-list,
+      .food-list {
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .mini-stat {
+        border-radius: 14px;
+        padding: 9px 10px;
+      }
+
+      .mini-stat-label {
+        font-size: 0.64rem;
+        margin-bottom: 3px;
+      }
+
+      .mini-stat-value {
+        font-size: 0.88rem;
+      }
+
+      .coaster-card,
+      .food-card {
+        padding: 11px;
+      }
+
+      .card-header {
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      .area-tag,
+      .rating-tag {
+        padding: 5px 8px;
+        font-size: 0.68rem;
+      }
+
+      .stat-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .stat-box {
+        border-radius: 999px;
+        padding: 6px 8px;
+      }
+
+      .stat-box span,
+      .stat-box strong {
+        display: inline;
+        font-size: 0.75rem;
+        line-height: 1.2;
+      }
+
+      .stat-box span {
+        margin: 0 4px 0 0;
+        letter-spacing: 0.04em;
+      }
+
+      .food-meta {
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .food-pill {
+        border-radius: 999px;
+        padding: 7px 9px;
+      }
+
+      .note {
+        margin-top: 12px;
+        padding: 11px 12px;
+      }
+    }
   </style>
 </head>
 <body>
