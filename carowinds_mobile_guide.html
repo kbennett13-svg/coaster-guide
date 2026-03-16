@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Carowinds Coaster & Dining Guide</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: rgba(255, 255, 255, 0.92);
+      --card-strong: #ffffff;
+      --text: #10213a;
+      --muted: #5f718a;
+      --line: rgba(16, 33, 58, 0.11);
+      --blue: #1565c0;
+      --blue-deep: #0d47a1;
+      --cyan: #dff2ff;
+      --gold: #fff2c2;
+      --shadow: 0 18px 40px rgba(18, 38, 70, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(21, 101, 192, 0.16), transparent 28%),
+        linear-gradient(180deg, #fafdff 0%, var(--bg) 100%);
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: max(18px, env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom));
+    }
+
+    .hero,
+    .section-card,
+    .coaster-card,
+    .food-card {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 24px 20px;
+      background:
+        linear-gradient(145deg, rgba(13, 71, 161, 0.96), rgba(21, 101, 192, 0.88)),
+        linear-gradient(180deg, #ffffff, #ffffff);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -65px auto;
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 7vw, 3.35rem);
+      margin-bottom: 12px;
+      max-width: 10ch;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 42ch;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+    }
+
+    .top-links {
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      display: flex;
+      gap: 10px;
+      padding: 12px 0 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .top-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pill-link {
+      text-decoration: none;
+      white-space: nowrap;
+      color: var(--blue-deep);
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(21, 101, 192, 0.15);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.94rem;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(18, 38, 70, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section-card {
+      padding: 18px;
+    }
+
+    .section-title {
+      color: var(--blue-deep);
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-stat {
+      background: var(--card-strong);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .mini-stat-label {
+      display: block;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .mini-stat-value {
+      font-weight: 800;
+      color: var(--blue-deep);
+      font-size: 1rem;
+    }
+
+    .coaster-list,
+    .food-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .coaster-card,
+    .food-card {
+      padding: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .area-tag,
+    .rating-tag {
+      flex-shrink: 0;
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .area-tag {
+      background: var(--cyan);
+      color: var(--blue-deep);
+    }
+
+    .rating-tag {
+      background: var(--gold);
+      color: #7b5a00;
+    }
+
+    .subtle {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .stat-box {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 11px 12px;
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .stat-box strong {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .food-meta {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .food-pill {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 11px 12px;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .food-pill strong {
+      color: var(--blue-deep);
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 15px;
+      border-radius: 18px;
+      background: #eef6ff;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border: 1px solid rgba(21, 101, 192, 0.14);
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding: 0 4px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    @media (min-width: 720px) {
+      .page {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .coaster-list,
+      .food-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">iPhone Park Guide</p>
+      <h1>Carowinds Coaster + Dining Guide</h1>
+      <p>Quick coaster stats up top, then a park-by-park food game plan for dining plan meals. Built to skim easily on a phone while walking the park.</p>
+    </section>
+
+    <nav class="top-links" aria-label="Quick navigation">
+      <a class="pill-link" href="#overview">Overview</a>
+      <a class="pill-link" href="#coasters">Coasters</a>
+      <a class="pill-link" href="#dining">Dining Plan</a>
+    </nav>
+
+    <section class="section" id="overview">
+      <div class="section-card">
+        <h2 class="section-title">At a Glance</h2>
+        <p class="section-copy">This guide includes Carowinds' current non-kiddie coasters, plus Kiddy Hawk as requested. Dining plan locations below follow Carowinds' published participating meal locations for 2026.</p>
+        <div class="mini-grid">
+          <div class="mini-stat">
+            <span class="mini-stat-label">Included Coasters</span>
+            <span class="mini-stat-value">10</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-label">Dining Meal Spots</span>
+            <span class="mini-stat-value">14</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-label">Fastest Coaster</span>
+            <span class="mini-stat-value">Fury 325</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-label">Biggest Inversion Count</span>
+            <span class="mini-stat-value">Afterburn / Flying Cobras</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="coasters">
+      <div class="section-card">
+        <h2 class="section-title">Coasters</h2>
+        <p class="section-copy">Stats focus on top speed, manufacturer, inversions, and year the coaster debuted at Carowinds. For relocated or renamed rides, the year listed is the Carowinds debut.</p>
+
+        <div class="coaster-list">
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Fury 325</h3>
+                <p class="subtle">Giga coaster in Thrill Zone</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>95 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Bolliger &amp; Mabillard</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>0</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>2015</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Thunder Striker</h3>
+                <p class="subtle">Hyper coaster in Thrill Zone</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>80 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Bolliger &amp; Mabillard</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>0</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>2010</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Copperhead Strike</h3>
+                <p class="subtle">Double-launch coaster in Blue Ridge Junction</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>50 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Mack Rides</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>5</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>2019</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Afterburn</h3>
+                <p class="subtle">Inverted coaster in Aeronautica Landing</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>62 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Bolliger &amp; Mabillard</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>6</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>1999</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Vortex</h3>
+                <p class="subtle">Stand-up coaster near Celebration Plaza</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>50 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Bolliger &amp; Mabillard</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>2</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>1992</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Flying Cobras</h3>
+                <p class="subtle">Boomerang coaster in County Fair</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>50 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Vekoma</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>6 total traversals</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>2009</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Carolina Cyclone</h3>
+                <p class="subtle">Classic looping coaster in Carolina Boardwalk</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>41 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Arrow Dynamics</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>4</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>1980</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Hurler</h3>
+                <p class="subtle">Wood coaster in Thrill Zone</p>
+              </div>
+              <span class="rating-tag">Extreme</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>50 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>International Coasters, Inc.</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>0</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>1994</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Carolina Goldrusher</h3>
+                <p class="subtle">Mine-train style coaster in Carolina Boardwalk</p>
+              </div>
+              <span class="rating-tag">Thrill</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>30 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Arrow Dynamics</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>0</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>1973</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Ricochet</h3>
+                <p class="subtle">Wild mouse in Carolina Boardwalk</p>
+              </div>
+              <span class="rating-tag">Thrill</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>28 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Mack Rides</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>0</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>2002</strong></div>
+            </div>
+          </article>
+
+          <article class="coaster-card">
+            <div class="card-header">
+              <div>
+                <h3>Kiddy Hawk</h3>
+                <p class="subtle">Family suspended coaster in Camp Snoopy</p>
+              </div>
+              <span class="rating-tag">Family+</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box"><span>Speed</span><strong>26 mph</strong></div>
+              <div class="stat-box"><span>Manufacturer</span><strong>Vekoma</strong></div>
+              <div class="stat-box"><span>Inversions</span><strong>0</strong></div>
+              <div class="stat-box"><span>Opened</span><strong>2003</strong></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="note">
+          Flying Cobras' track has 3 inversion elements, but riders experience them twice because the boomerang layout runs forward and backward. The year shown is the Carowinds debut, not the ride's original installation elsewhere.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dining">
+      <div class="section-card">
+        <h2 class="section-title">Dining Plan Locations</h2>
+        <p class="section-copy">These are the meal locations listed on Carowinds' dining plan page, with the park area and the typical food each spot serves.</p>
+
+        <div class="food-list">
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Beach Bites</h3>
+                <p class="subtle">Waterpark quick stop</p>
+              </div>
+              <span class="area-tag">Carolina Harbor</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Near Tidal Wave Bay, across from Storm Surge slides.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Fish and chips, shrimp and chips, fries, pretzels, and soft-serve snacks.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Blue Ridge Country Kitchen</h3>
+                <p class="subtle">Carolina comfort food</p>
+              </div>
+              <span class="area-tag">Blue Ridge Junction</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Across from Mountain Gliders.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Roasted chicken, chicken tenders, wings, sausage with peppers and onions, salads, and Southern-style sides.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Burrito Café</h3>
+                <p class="subtle">Mexican-inspired fast casual</p>
+              </div>
+              <span class="area-tag">Celebration Plaza</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Next to Plaza Stage, across from Starbucks.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Jumbo burritos, burrito salads, loaded nachos, taco salad, walking tacos, chips, and fresh salsa.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Camp Cookout</h3>
+                <p class="subtle">Kid-friendly classics</p>
+              </div>
+              <span class="area-tag">Camp Snoopy</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Near Snoopy vs. Red Baron.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Chicken tenders, cheeseburgers, hot dogs, fries, mini corn dogs, and kids' meals.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Chickie's &amp; Pete's Sports Grill</h3>
+                <p class="subtle">Sports bar break</p>
+              </div>
+              <span class="area-tag">Carolina Boardwalk</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Across from Carolina Goldrusher.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Cheesesteaks, Crabfries, wings, fried shrimp, Caesar salad, and nachos.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Frequent Fryers</h3>
+                <p class="subtle">Aeronautica fried favorites</p>
+              </div>
+              <span class="area-tag">Aeronautica Landing</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Near Hover and Dodge.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Popcorn chicken, shrimp, chips, and fries.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Harbor House</h3>
+                <p class="subtle">Flagship waterpark meal stop</p>
+              </div>
+              <span class="area-tag">Carolina Harbor</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Between Surf Club Harbor and Tidal Wave Bay.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Chicken tenders, pulled pork, fried shrimp, ribs, burgers, wraps, fruit, and salads.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Harmony Hall</h3>
+                <p class="subtle">Largest dining hall in the park</p>
+              </div>
+              <span class="area-tag">Celebration Plaza</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Main indoor dining hall on the Celebration Plaza / Thunder Road edge, near Ripcord.</div>
+              <div class="food-pill"><strong>Typical food:</strong> BBQ, pizza, poke bowls, grilled cheese, salads, burgers, and hand-breaded chicken tenders.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Juke Box Diner</h3>
+                <p class="subtle">Retro diner meal</p>
+              </div>
+              <span class="area-tag">Thrill Zone</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> In front of Hurler.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Burgers, hand-breaded chicken tenders, roast beef sandwiches, onion rings, fries, and fruit.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Leonardo's Hometown Italian Food</h3>
+                <p class="subtle">Pasta and pizza stop</p>
+              </div>
+              <span class="area-tag">Aeronautica Landing</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Next to Boo Blasters on Boo Hill, attached to Terminal A.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Pizza, pasta, stuffed shells, chicken parmesan or sausage piadinas, and entree salads.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Nacho Nook</h3>
+                <p class="subtle">Quick nacho stop</p>
+              </div>
+              <span class="area-tag">Thunder Road Area</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Near Ripcord.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Chicken tinga nachos and pork carnitas nachos.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Panda Express</h3>
+                <p class="subtle">Reliable stir-fry option</p>
+              </div>
+              <span class="area-tag">Camp Snoopy Edge</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Across from Kiddy Hawk, beside the Camp Store.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Orange chicken, kung pao chicken, broccoli beef, and other Panda Express combo plates.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Papa Luigi's</h3>
+                <p class="subtle">Classic pizza counter</p>
+              </div>
+              <span class="area-tag">Carousel Park</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> Across from the Grand Carousel, beside Carowinds Theater.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Cheese and pepperoni pizza, specialty pizza, breadsticks, salads, and meatball subs.</div>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="card-header">
+              <div>
+                <h3>Sharky's Grille</h3>
+                <p class="subtle">Waterpark family meal stop</p>
+              </div>
+              <span class="area-tag">Carolina Harbor</span>
+            </div>
+            <div class="food-meta">
+              <div class="food-pill"><strong>Location:</strong> In the children's area, across from Seaside Splashworks.</div>
+              <div class="food-pill"><strong>Typical food:</strong> Chicken tenders, cheeseburgers, jumbo hot dogs, cheese pizza, pepperoni pizza, and fries.</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="note">
+          Carowinds says participating dining locations and included menu items can change without notice. This page reflects the official dining-plan list and restaurant descriptions currently published for 2026.
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">Built for quick iPhone viewing with current Carowinds and RCDB reference data.</p>
+  </main>
+</body>
+</html>
