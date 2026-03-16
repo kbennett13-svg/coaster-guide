@@ -306,25 +306,25 @@
 
     @media (max-width: 520px) {
       :root {
-        --radius: 18px;
+        --radius: 16px;
       }
 
       .page {
-        padding: max(12px, env(safe-area-inset-top)) 12px calc(18px + env(safe-area-inset-bottom));
+        padding: max(10px, env(safe-area-inset-top)) 10px calc(16px + env(safe-area-inset-bottom));
       }
 
       .hero {
-        padding: 16px 14px;
+        padding: 12px 12px;
       }
 
       .eyebrow {
-        margin-bottom: 6px;
-        font-size: 0.7rem;
+        margin-bottom: 4px;
+        font-size: 0.66rem;
       }
 
       h1 {
-        font-size: 1.65rem;
-        margin-bottom: 8px;
+        font-size: 1.35rem;
+        margin-bottom: 6px;
         max-width: none;
       }
 
@@ -339,85 +339,85 @@
       .top-links {
         top: 8px;
         gap: 6px;
-        margin-top: 10px;
-        padding: 8px 10px;
+        margin-top: 8px;
+        padding: 7px 8px;
       }
 
       .pill-link {
-        padding: 8px 10px;
-        font-size: 0.78rem;
+        padding: 6px 8px;
+        font-size: 0.74rem;
       }
 
       .section {
-        margin-top: 12px;
+        margin-top: 10px;
       }
 
       .section-card {
-        padding: 14px;
+        padding: 12px;
       }
 
       .section-title {
-        font-size: 1.15rem;
-        margin-bottom: 6px;
+        font-size: 1rem;
+        margin-bottom: 4px;
       }
 
       .mini-grid,
       .coaster-list,
       .food-list {
-        gap: 8px;
-        margin-top: 12px;
+        gap: 6px;
+        margin-top: 10px;
       }
 
       .mini-stat {
-        border-radius: 14px;
-        padding: 9px 10px;
+        border-radius: 12px;
+        padding: 7px 8px;
       }
 
       .mini-stat-label {
-        font-size: 0.64rem;
-        margin-bottom: 3px;
+        font-size: 0.58rem;
+        margin-bottom: 2px;
       }
 
       .mini-stat-value {
-        font-size: 0.88rem;
+        font-size: 0.78rem;
       }
 
       .coaster-card,
       .food-card {
-        padding: 11px;
+        padding: 9px 10px;
       }
 
       .card-header {
-        gap: 8px;
-        margin-bottom: 8px;
+        gap: 6px;
+        margin-bottom: 6px;
       }
 
       h3 {
-        font-size: 1rem;
+        font-size: 0.94rem;
       }
 
       .area-tag,
       .rating-tag {
-        padding: 5px 8px;
-        font-size: 0.68rem;
+        padding: 4px 7px;
+        font-size: 0.64rem;
       }
 
       .stat-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 10px;
+        gap: 5px;
+        margin-top: 6px;
       }
 
       .stat-box {
         border-radius: 999px;
-        padding: 6px 8px;
+        padding: 4px 7px;
       }
 
       .stat-box span,
       .stat-box strong {
         display: inline;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         line-height: 1.2;
       }
 
@@ -433,12 +433,101 @@
 
       .food-pill {
         border-radius: 999px;
-        padding: 7px 9px;
+        padding: 6px 8px;
       }
 
       .note {
         margin-top: 12px;
         padding: 11px 12px;
+      }
+
+      #coasters .section-card {
+        background: rgba(255, 255, 255, 0.78);
+        padding: 10px 10px 6px;
+      }
+
+      #coasters .section-copy {
+        font-size: 0.78rem;
+      }
+
+      #coasters .coaster-list {
+        gap: 0;
+        margin-top: 8px;
+      }
+
+      #coasters .coaster-card {
+        background: transparent;
+        backdrop-filter: none;
+        border: 0;
+        border-bottom: 1px solid rgba(16, 33, 58, 0.1);
+        border-radius: 0;
+        box-shadow: none;
+        padding: 7px 0;
+      }
+
+      #coasters .coaster-card:last-child {
+        border-bottom: 0;
+      }
+
+      #coasters .card-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        gap: 4px 6px;
+        margin-bottom: 3px;
+      }
+
+      #coasters .card-header > div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 2px 6px;
+        min-width: 0;
+      }
+
+      #coasters h3 {
+        font-size: 0.86rem;
+        line-height: 1.15;
+      }
+
+      #coasters .subtle {
+        margin: 0;
+        font-size: 0.72rem;
+        line-height: 1.2;
+      }
+
+      #coasters .rating-tag {
+        align-self: start;
+        padding: 2px 6px;
+        font-size: 0.58rem;
+      }
+
+      #coasters .stat-row {
+        gap: 3px 6px;
+        margin-top: 0;
+      }
+
+      #coasters .stat-box {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      #coasters .stat-box span,
+      #coasters .stat-box strong {
+        font-size: 0.67rem;
+      }
+
+      #coasters .stat-box span {
+        color: var(--muted);
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 600;
+      }
+
+      #coasters .stat-box span::after {
+        content: ":";
       }
     }
   </style>
