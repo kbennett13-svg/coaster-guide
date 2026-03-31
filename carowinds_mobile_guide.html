@@ -261,6 +261,77 @@
       margin-top: 12px;
     }
 
+    .table-wrap {
+      margin-top: 16px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card-strong);
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 420px;
+    }
+
+    .compact-table {
+      min-width: 560px;
+    }
+
+    .info-table th,
+    .info-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+
+    .info-table th {
+      background: #f2f8ff;
+      color: var(--blue-deep);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .info-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .pass-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.94rem;
+      color: var(--text);
+      user-select: all;
+      -webkit-user-select: all;
+    }
+
+    .compare-label {
+      margin: 18px 0 0;
+      color: var(--blue-deep);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .compact-name {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .compact-nearby {
+      white-space: nowrap;
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+
+    .compact-food {
+      color: var(--text);
+      line-height: 1.35;
+    }
+
     .food-pill {
       background: #f8fbff;
       border: 1px solid var(--line);
@@ -434,6 +505,30 @@
       .food-pill {
         border-radius: 999px;
         padding: 6px 8px;
+      }
+
+      .table-wrap {
+        margin-top: 10px;
+        border-radius: 14px;
+      }
+
+      .info-table th,
+      .info-table td {
+        padding: 9px 10px;
+        font-size: 0.82rem;
+      }
+
+      .info-table th {
+        font-size: 0.66rem;
+      }
+
+      .pass-code {
+        font-size: 0.8rem;
+      }
+
+      .compare-label {
+        margin-top: 12px;
+        font-size: 0.68rem;
       }
 
       .note {
@@ -851,7 +946,7 @@
               <span class="area-tag">Carolina Harbor</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Ricochet</div>
+              <div class="food-pill"><strong>🎢</strong> Ricochet</div>
               <div class="food-pill"><strong>🍤 Seafood + snacks:</strong> Fish and chips, shrimp and chips, fries, pretzels, and soft-serve.</div>
             </div>
           </article>
@@ -865,7 +960,7 @@
               <span class="area-tag">Blue Ridge Junction</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Copperhead Strike</div>
+              <div class="food-pill"><strong>🎢</strong> Copperhead Strike</div>
               <div class="food-pill"><strong>🍗 Chicken + comfort:</strong> Roasted chicken, tenders, wings, sausage, salads, and Southern sides.</div>
             </div>
           </article>
@@ -879,7 +974,7 @@
               <span class="area-tag">Celebration Plaza</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Vortex</div>
+              <div class="food-pill"><strong>🎢</strong> Vortex</div>
               <div class="food-pill"><strong>🌯 Mexican:</strong> Burritos, burrito salads, loaded nachos, taco salad, walking tacos, chips, and salsa.</div>
             </div>
           </article>
@@ -893,7 +988,7 @@
               <span class="area-tag">Camp Snoopy</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Kiddy Hawk</div>
+              <div class="food-pill"><strong>🎢</strong> Kiddy Hawk</div>
               <div class="food-pill"><strong>🍔 Kids' classics:</strong> Tenders, cheeseburgers, hot dogs, fries, mini corn dogs, and kids' meals.</div>
             </div>
           </article>
@@ -907,7 +1002,7 @@
               <span class="area-tag">Carolina Boardwalk</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Carolina Goldrusher</div>
+              <div class="food-pill"><strong>🎢</strong> Carolina Goldrusher</div>
               <div class="food-pill"><strong>🍟 Grill + wings:</strong> Cheesesteaks, Crabfries, wings, fried shrimp, Caesar salad, and nachos.</div>
             </div>
           </article>
@@ -921,7 +1016,7 @@
               <span class="area-tag">Aeronautica Landing</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Afterburn</div>
+              <div class="food-pill"><strong>🎢</strong> Afterburn</div>
               <div class="food-pill"><strong>🍗 Fried bites:</strong> Popcorn chicken, shrimp, chips, and fries.</div>
             </div>
           </article>
@@ -935,7 +1030,7 @@
               <span class="area-tag">Carolina Harbor</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Ricochet</div>
+              <div class="food-pill"><strong>🎢</strong> Ricochet</div>
               <div class="food-pill"><strong>🍖 BBQ + burgers:</strong> Tenders, pulled pork, fried shrimp, ribs, burgers, wraps, fruit, and salads.</div>
             </div>
           </article>
@@ -949,7 +1044,7 @@
               <span class="area-tag">Celebration Plaza</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Hurler</div>
+              <div class="food-pill"><strong>🎢</strong> Hurler</div>
               <div class="food-pill"><strong>🍕 Variety hall:</strong> BBQ, pizza, poke bowls, grilled cheese, salads, burgers, and tenders.</div>
             </div>
           </article>
@@ -963,7 +1058,7 @@
               <span class="area-tag">Thrill Zone</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Hurler</div>
+              <div class="food-pill"><strong>🎢</strong> Hurler</div>
               <div class="food-pill"><strong>🍔 Diner fare:</strong> Burgers, chicken tenders, roast beef sandwiches, onion rings, fries, and fruit.</div>
             </div>
           </article>
@@ -977,7 +1072,7 @@
               <span class="area-tag">Aeronautica Landing</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Afterburn</div>
+              <div class="food-pill"><strong>🎢</strong> Afterburn</div>
               <div class="food-pill"><strong>🍕 Italian:</strong> Pizza, pasta, stuffed shells, chicken parmesan or sausage piadinas, and salads.</div>
             </div>
           </article>
@@ -991,7 +1086,7 @@
               <span class="area-tag">Thunder Road Area</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Hurler</div>
+              <div class="food-pill"><strong>🎢</strong> Hurler</div>
               <div class="food-pill"><strong>🧀 Nachos:</strong> Chicken tinga nachos and pork carnitas nachos.</div>
             </div>
           </article>
@@ -1005,7 +1100,7 @@
               <span class="area-tag">Camp Snoopy Edge</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Kiddy Hawk</div>
+              <div class="food-pill"><strong>🎢</strong> Kiddy Hawk</div>
               <div class="food-pill"><strong>🥡 Chinese:</strong> Orange chicken, kung pao chicken, broccoli beef, and combo plates.</div>
             </div>
           </article>
@@ -1019,7 +1114,7 @@
               <span class="area-tag">Carousel Park</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Vortex</div>
+              <div class="food-pill"><strong>🎢</strong> Vortex</div>
               <div class="food-pill"><strong>🍕 Pizza:</strong> Cheese and pepperoni pizza, specialty pizza, breadsticks, salads, and meatball subs.</div>
             </div>
           </article>
@@ -1033,14 +1128,139 @@
               <span class="area-tag">Carolina Harbor</span>
             </div>
             <div class="food-meta">
-              <div class="food-pill"><strong>🎢 Nearest coaster:</strong> Kiddy Hawk</div>
+              <div class="food-pill"><strong>🎢</strong> Kiddy Hawk</div>
               <div class="food-pill"><strong>🍔 Family favorites:</strong> Chicken tenders, cheeseburgers, jumbo hot dogs, cheese pizza, pepperoni pizza, and fries.</div>
             </div>
           </article>
         </div>
 
+        <p class="compare-label">Alternate Compact View</p>
+        <div class="table-wrap">
+          <table class="info-table compact-table">
+            <thead>
+              <tr>
+                <th>Dining Place</th>
+                <th>🎢 Nearby</th>
+                <th>Food Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="compact-name">Leonardo's Hometown Italian Food</td>
+                <td class="compact-nearby">Afterburn</td>
+                <td class="compact-food">🍕 Pizza, pasta, stuffed shells, salads</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Frequent Fryers</td>
+                <td class="compact-nearby">Afterburn</td>
+                <td class="compact-food">🍗 Popcorn chicken, shrimp, chips, fries</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Chickie's &amp; Pete's Sports Grill</td>
+                <td class="compact-nearby">Carolina Goldrusher</td>
+                <td class="compact-food">🍟 Cheesesteaks, Crabfries, wings, shrimp, nachos</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Blue Ridge Country Kitchen</td>
+                <td class="compact-nearby">Copperhead Strike</td>
+                <td class="compact-food">🍗 Roasted chicken, tenders, wings, Southern sides</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Harmony Hall</td>
+                <td class="compact-nearby">Hurler</td>
+                <td class="compact-food">🍕 BBQ, pizza, poke bowls, grilled cheese, burgers</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Juke Box Diner</td>
+                <td class="compact-nearby">Hurler</td>
+                <td class="compact-food">🍔 Burgers, tenders, roast beef sandwiches, onion rings</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Nacho Nook</td>
+                <td class="compact-nearby">Hurler</td>
+                <td class="compact-food">🧀 Chicken tinga nachos, pork carnitas nachos</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Camp Cookout</td>
+                <td class="compact-nearby">Kiddy Hawk</td>
+                <td class="compact-food">🍔 Tenders, cheeseburgers, hot dogs, fries</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Panda Express</td>
+                <td class="compact-nearby">Kiddy Hawk</td>
+                <td class="compact-food">🥡 Orange chicken, kung pao chicken, broccoli beef</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Sharky's Grille</td>
+                <td class="compact-nearby">Kiddy Hawk</td>
+                <td class="compact-food">🍔 Tenders, cheeseburgers, hot dogs, pizza, fries</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Beach Bites</td>
+                <td class="compact-nearby">Ricochet</td>
+                <td class="compact-food">🍤 Fish and chips, shrimp, pretzels, soft-serve</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Harbor House</td>
+                <td class="compact-nearby">Ricochet</td>
+                <td class="compact-food">🍖 Pulled pork, ribs, burgers, wraps, salads</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Burrito Cafe</td>
+                <td class="compact-nearby">Vortex</td>
+                <td class="compact-food">🌯 Burritos, taco salad, loaded nachos, chips and salsa</td>
+              </tr>
+              <tr>
+                <td class="compact-name">Papa Luigi's</td>
+                <td class="compact-nearby">Vortex</td>
+                <td class="compact-food">🍕 Cheese and pepperoni pizza, breadsticks, meatball subs</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <div class="note">
           Carowinds says participating dining locations and included menu items can change without notice. This page reflects the official dining-plan list and restaurant descriptions currently published for 2026.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="passes">
+      <div class="section-card">
+        <h2 class="section-title">Season Passes</h2>
+        <p class="section-copy">Quick reference for fast lane redemption. The pass numbers are shown in a copy-friendly format for use in another browser if needed.</p>
+
+        <div class="table-wrap">
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Season Pass Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Morgan</td>
+                <td><span class="pass-code">25423525925847804617</span></td>
+              </tr>
+              <tr>
+                <td>Meredith</td>
+                <td><span class="pass-code">25423525926847809599</span></td>
+              </tr>
+              <tr>
+                <td>Charlie</td>
+                <td><span class="pass-code">25423525928847802713</span></td>
+              </tr>
+              <tr>
+                <td>Karen</td>
+                <td><span class="pass-code">25423525927847800250</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          Tip: tap and hold on a pass number to copy it quickly on iPhone.
         </div>
       </div>
     </section>
