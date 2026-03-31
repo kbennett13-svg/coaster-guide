@@ -307,15 +307,6 @@
       -webkit-user-select: all;
     }
 
-    .compare-label {
-      margin: 18px 0 0;
-      color: var(--blue-deep);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
     .compact-name {
       font-weight: 700;
       color: var(--text);
@@ -343,6 +334,160 @@
 
     .food-pill strong {
       color: var(--blue-deep);
+    }
+
+    #coasters .section-card {
+      background: rgba(255, 255, 255, 0.78);
+      padding: 10px 10px 6px;
+    }
+
+    #coasters .section-copy {
+      font-size: 0.88rem;
+    }
+
+    #coasters .coaster-list {
+      gap: 0;
+      margin-top: 8px;
+    }
+
+    #coasters .coaster-card {
+      background: transparent;
+      backdrop-filter: none;
+      border: 0;
+      border-bottom: 1px solid rgba(16, 33, 58, 0.1);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 9px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 8px;
+    }
+
+    #coasters .coaster-card:last-child {
+      border-bottom: 0;
+    }
+
+    #coasters .card-header {
+      display: contents;
+    }
+
+    #coasters .card-header > div {
+      display: contents;
+    }
+
+    #coasters h3 {
+      font-size: 1rem;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    #coasters .subtle {
+      display: none;
+    }
+
+    #coasters .rating-tag {
+      align-self: center;
+      padding: 3px 7px;
+      font-size: 0.68rem;
+    }
+
+    #coasters .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 10px;
+      margin-top: 0;
+      align-items: baseline;
+    }
+
+    #coasters .stat-box {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    #coasters .stat-box span,
+    #coasters .stat-box strong {
+      display: inline;
+      font-size: 0.78rem;
+      line-height: 1.2;
+    }
+
+    #coasters .stat-box span {
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 600;
+      margin-right: 2px;
+    }
+
+    #coasters .stat-box span::before {
+      margin-right: 2px;
+    }
+
+    #coasters .stat-box:nth-child(1) span::before {
+      content: "⚡";
+    }
+
+    #coasters .stat-box:nth-child(2) span::before {
+      content: "🏭";
+    }
+
+    #coasters .stat-box:nth-child(3) span::before {
+      content: "↻";
+    }
+
+    #coasters .stat-box:nth-child(4) span::before {
+      content: "📅";
+    }
+
+    #coasters .stat-box span::after {
+      content: "";
+    }
+
+    .dining-compact-list {
+      display: grid;
+      gap: 0;
+      margin-top: 12px;
+    }
+
+    .dining-compact-item {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(16, 33, 58, 0.1);
+    }
+
+    .dining-compact-item:last-child {
+      border-bottom: 0;
+    }
+
+    .dining-compact-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 8px;
+    }
+
+    .dining-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.15;
+    }
+
+    .dining-nearby {
+      color: var(--blue-deep);
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .dining-food {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.35;
     }
 
     .note {
@@ -526,123 +671,36 @@
         font-size: 0.8rem;
       }
 
-      .compare-label {
-        margin-top: 12px;
-        font-size: 0.68rem;
-      }
-
       .note {
         margin-top: 12px;
         padding: 11px 12px;
-      }
-
-      #coasters .section-card {
-        background: rgba(255, 255, 255, 0.78);
-        padding: 10px 10px 6px;
       }
 
       #coasters .section-copy {
         font-size: 0.78rem;
       }
 
-      #coasters .coaster-list {
-        gap: 0;
-        margin-top: 8px;
-      }
-
       #coasters .coaster-card {
-        background: transparent;
-        backdrop-filter: none;
-        border: 0;
-        border-bottom: 1px solid rgba(16, 33, 58, 0.1);
-        border-radius: 0;
-        box-shadow: none;
         padding: 7px 0;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
         gap: 2px 7px;
-      }
-
-      #coasters .coaster-card:last-child {
-        border-bottom: 0;
-      }
-
-      #coasters .card-header {
-        display: contents;
-      }
-
-      #coasters .card-header > div {
-        display: contents;
       }
 
       #coasters h3 {
         font-size: 0.86rem;
-        line-height: 1.15;
-        white-space: nowrap;
-      }
-
-      #coasters .subtle {
-        display: none;
       }
 
       #coasters .rating-tag {
-        align-self: center;
         padding: 2px 6px;
         font-size: 0.58rem;
       }
 
       #coasters .stat-row {
-        display: flex;
-        flex-wrap: wrap;
         gap: 2px 8px;
-        margin-top: 0;
-        align-items: baseline;
-      }
-
-      #coasters .stat-box {
-        background: transparent;
-        border: 0;
-        border-radius: 0;
-        padding: 0;
-        white-space: nowrap;
       }
 
       #coasters .stat-box span,
       #coasters .stat-box strong {
         font-size: 0.64rem;
-      }
-
-      #coasters .stat-box span {
-        color: var(--muted);
-        text-transform: none;
-        letter-spacing: 0;
-        font-weight: 600;
-        margin-right: 2px;
-      }
-
-      #coasters .stat-box span::before {
-        margin-right: 2px;
-      }
-
-      #coasters .stat-box:nth-child(1) span::before {
-        content: "⚡";
-      }
-
-      #coasters .stat-box:nth-child(2) span::before {
-        content: "🏭";
-      }
-
-      #coasters .stat-box:nth-child(3) span::before {
-        content: "↻";
-      }
-
-      #coasters .stat-box:nth-child(4) span::before {
-        content: "📅";
-      }
-
-      #coasters .stat-box span::after {
-        content: "";
       }
 
       #dining .section-card {
@@ -653,52 +711,30 @@
         font-size: 0.8rem;
       }
 
-      #dining .food-list {
-        gap: 8px;
+      .dining-compact-list {
         margin-top: 8px;
       }
 
-      #dining .food-card {
-        background: rgba(255, 255, 255, 0.84);
-        box-shadow: none;
-        border-radius: 14px;
-        padding: 9px 10px;
+      .dining-compact-item {
+        padding: 7px 0;
       }
 
-      #dining .card-header {
-        margin-bottom: 4px;
+      .dining-compact-top {
+        gap: 2px 7px;
       }
 
-      #dining h3 {
-        font-size: 0.88rem;
+      .dining-name {
+        font-size: 0.86rem;
       }
 
-      #dining .subtle {
-        margin-top: 1px;
-        font-size: 0.72rem;
+      .dining-nearby {
+        font-size: 0.68rem;
       }
 
-      #dining .area-tag {
-        padding: 3px 7px;
-        font-size: 0.6rem;
-      }
-
-      #dining .food-meta {
-        gap: 4px;
-        margin-top: 6px;
-      }
-
-      #dining .food-pill {
-        background: transparent;
-        border: 0;
-        border-radius: 0;
-        padding: 0;
+      .dining-food {
+        margin-top: 2px;
         font-size: 0.75rem;
         line-height: 1.28;
-      }
-
-      #dining .food-pill strong {
-        color: var(--blue-deep);
       }
     }
   </style>
@@ -934,289 +970,120 @@
     <section class="section" id="dining">
       <div class="section-card">
         <h2 class="section-title">Dining Plan Locations</h2>
-        <p class="section-copy">These are the meal locations listed on Carowinds' dining plan page, with the park area and the typical food each spot serves.</p>
+        <p class="section-copy">These are the meal locations listed on Carowinds' dining plan page, shown in a compact no-scroll list sorted by nearby coaster.</p>
 
-        <div class="food-list">
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Beach Bites</h3>
-                <p class="subtle">Waterpark quick stop</p>
-              </div>
-              <span class="area-tag">Carolina Harbor</span>
+        <div class="dining-compact-list">
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Leonardo's Hometown Italian Food</span>
+              <span class="dining-nearby">🎢 Afterburn</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Ricochet</div>
-              <div class="food-pill"><strong>🍤 Seafood + snacks:</strong> Fish and chips, shrimp and chips, fries, pretzels, and soft-serve.</div>
-            </div>
+            <div class="dining-food">🍕 Pizza, pasta, stuffed shells, salads</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Blue Ridge Country Kitchen</h3>
-                <p class="subtle">Carolina comfort food</p>
-              </div>
-              <span class="area-tag">Blue Ridge Junction</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Frequent Fryers</span>
+              <span class="dining-nearby">🎢 Afterburn</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Copperhead Strike</div>
-              <div class="food-pill"><strong>🍗 Chicken + comfort:</strong> Roasted chicken, tenders, wings, sausage, salads, and Southern sides.</div>
-            </div>
+            <div class="dining-food">🍗 Popcorn chicken, shrimp, chips, fries</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Burrito Café</h3>
-                <p class="subtle">Mexican-inspired fast casual</p>
-              </div>
-              <span class="area-tag">Celebration Plaza</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Chickie's &amp; Pete's Sports Grill</span>
+              <span class="dining-nearby">🎢 Carolina Goldrusher</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Vortex</div>
-              <div class="food-pill"><strong>🌯 Mexican:</strong> Burritos, burrito salads, loaded nachos, taco salad, walking tacos, chips, and salsa.</div>
-            </div>
+            <div class="dining-food">🍟 Cheesesteaks, Crabfries, wings, shrimp, nachos</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Camp Cookout</h3>
-                <p class="subtle">Kid-friendly classics</p>
-              </div>
-              <span class="area-tag">Camp Snoopy</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Blue Ridge Country Kitchen</span>
+              <span class="dining-nearby">🎢 Copperhead Strike</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Kiddy Hawk</div>
-              <div class="food-pill"><strong>🍔 Kids' classics:</strong> Tenders, cheeseburgers, hot dogs, fries, mini corn dogs, and kids' meals.</div>
-            </div>
+            <div class="dining-food">🍗 Roasted chicken, tenders, wings, Southern sides</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Chickie's &amp; Pete's Sports Grill</h3>
-                <p class="subtle">Sports bar break</p>
-              </div>
-              <span class="area-tag">Carolina Boardwalk</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Harmony Hall</span>
+              <span class="dining-nearby">🎢 Hurler</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Carolina Goldrusher</div>
-              <div class="food-pill"><strong>🍟 Grill + wings:</strong> Cheesesteaks, Crabfries, wings, fried shrimp, Caesar salad, and nachos.</div>
-            </div>
+            <div class="dining-food">🍕 BBQ, pizza, poke bowls, grilled cheese, burgers</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Frequent Fryers</h3>
-                <p class="subtle">Aeronautica fried favorites</p>
-              </div>
-              <span class="area-tag">Aeronautica Landing</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Juke Box Diner</span>
+              <span class="dining-nearby">🎢 Hurler</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Afterburn</div>
-              <div class="food-pill"><strong>🍗 Fried bites:</strong> Popcorn chicken, shrimp, chips, and fries.</div>
-            </div>
+            <div class="dining-food">🍔 Burgers, tenders, roast beef sandwiches, onion rings</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Harbor House</h3>
-                <p class="subtle">Flagship waterpark meal stop</p>
-              </div>
-              <span class="area-tag">Carolina Harbor</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Nacho Nook</span>
+              <span class="dining-nearby">🎢 Hurler</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Ricochet</div>
-              <div class="food-pill"><strong>🍖 BBQ + burgers:</strong> Tenders, pulled pork, fried shrimp, ribs, burgers, wraps, fruit, and salads.</div>
-            </div>
+            <div class="dining-food">🧀 Chicken tinga nachos, pork carnitas nachos</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Harmony Hall</h3>
-                <p class="subtle">Largest dining hall in the park</p>
-              </div>
-              <span class="area-tag">Celebration Plaza</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Camp Cookout</span>
+              <span class="dining-nearby">🎢 Kiddy Hawk</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Hurler</div>
-              <div class="food-pill"><strong>🍕 Variety hall:</strong> BBQ, pizza, poke bowls, grilled cheese, salads, burgers, and tenders.</div>
-            </div>
+            <div class="dining-food">🍔 Tenders, cheeseburgers, hot dogs, fries</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Juke Box Diner</h3>
-                <p class="subtle">Retro diner meal</p>
-              </div>
-              <span class="area-tag">Thrill Zone</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Panda Express</span>
+              <span class="dining-nearby">🎢 Kiddy Hawk</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Hurler</div>
-              <div class="food-pill"><strong>🍔 Diner fare:</strong> Burgers, chicken tenders, roast beef sandwiches, onion rings, fries, and fruit.</div>
-            </div>
+            <div class="dining-food">🥡 Orange chicken, kung pao chicken, broccoli beef</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Leonardo's Hometown Italian Food</h3>
-                <p class="subtle">Pasta and pizza stop</p>
-              </div>
-              <span class="area-tag">Aeronautica Landing</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Sharky's Grille</span>
+              <span class="dining-nearby">🎢 Kiddy Hawk</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Afterburn</div>
-              <div class="food-pill"><strong>🍕 Italian:</strong> Pizza, pasta, stuffed shells, chicken parmesan or sausage piadinas, and salads.</div>
-            </div>
+            <div class="dining-food">🍔 Tenders, cheeseburgers, hot dogs, pizza, fries</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Nacho Nook</h3>
-                <p class="subtle">Quick nacho stop</p>
-              </div>
-              <span class="area-tag">Thunder Road Area</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Beach Bites</span>
+              <span class="dining-nearby">🎢 Ricochet</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Hurler</div>
-              <div class="food-pill"><strong>🧀 Nachos:</strong> Chicken tinga nachos and pork carnitas nachos.</div>
-            </div>
+            <div class="dining-food">🍤 Fish and chips, shrimp, pretzels, soft-serve</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Panda Express</h3>
-                <p class="subtle">Reliable stir-fry option</p>
-              </div>
-              <span class="area-tag">Camp Snoopy Edge</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Harbor House</span>
+              <span class="dining-nearby">🎢 Ricochet</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Kiddy Hawk</div>
-              <div class="food-pill"><strong>🥡 Chinese:</strong> Orange chicken, kung pao chicken, broccoli beef, and combo plates.</div>
-            </div>
+            <div class="dining-food">🍖 Pulled pork, ribs, burgers, wraps, salads</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Papa Luigi's</h3>
-                <p class="subtle">Classic pizza counter</p>
-              </div>
-              <span class="area-tag">Carousel Park</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Burrito Cafe</span>
+              <span class="dining-nearby">🎢 Vortex</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Vortex</div>
-              <div class="food-pill"><strong>🍕 Pizza:</strong> Cheese and pepperoni pizza, specialty pizza, breadsticks, salads, and meatball subs.</div>
-            </div>
+            <div class="dining-food">🌯 Burritos, taco salad, loaded nachos, chips and salsa</div>
           </article>
 
-          <article class="food-card">
-            <div class="card-header">
-              <div>
-                <h3>Sharky's Grille</h3>
-                <p class="subtle">Waterpark family meal stop</p>
-              </div>
-              <span class="area-tag">Carolina Harbor</span>
+          <article class="dining-compact-item">
+            <div class="dining-compact-top">
+              <span class="dining-name">Papa Luigi's</span>
+              <span class="dining-nearby">🎢 Vortex</span>
             </div>
-            <div class="food-meta">
-              <div class="food-pill"><strong>🎢</strong> Kiddy Hawk</div>
-              <div class="food-pill"><strong>🍔 Family favorites:</strong> Chicken tenders, cheeseburgers, jumbo hot dogs, cheese pizza, pepperoni pizza, and fries.</div>
-            </div>
+            <div class="dining-food">🍕 Cheese and pepperoni pizza, breadsticks, meatball subs</div>
           </article>
-        </div>
-
-        <p class="compare-label">Alternate Compact View</p>
-        <div class="table-wrap">
-          <table class="info-table compact-table">
-            <thead>
-              <tr>
-                <th>Dining Place</th>
-                <th>🎢 Nearby</th>
-                <th>Food Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="compact-name">Leonardo's Hometown Italian Food</td>
-                <td class="compact-nearby">Afterburn</td>
-                <td class="compact-food">🍕 Pizza, pasta, stuffed shells, salads</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Frequent Fryers</td>
-                <td class="compact-nearby">Afterburn</td>
-                <td class="compact-food">🍗 Popcorn chicken, shrimp, chips, fries</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Chickie's &amp; Pete's Sports Grill</td>
-                <td class="compact-nearby">Carolina Goldrusher</td>
-                <td class="compact-food">🍟 Cheesesteaks, Crabfries, wings, shrimp, nachos</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Blue Ridge Country Kitchen</td>
-                <td class="compact-nearby">Copperhead Strike</td>
-                <td class="compact-food">🍗 Roasted chicken, tenders, wings, Southern sides</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Harmony Hall</td>
-                <td class="compact-nearby">Hurler</td>
-                <td class="compact-food">🍕 BBQ, pizza, poke bowls, grilled cheese, burgers</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Juke Box Diner</td>
-                <td class="compact-nearby">Hurler</td>
-                <td class="compact-food">🍔 Burgers, tenders, roast beef sandwiches, onion rings</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Nacho Nook</td>
-                <td class="compact-nearby">Hurler</td>
-                <td class="compact-food">🧀 Chicken tinga nachos, pork carnitas nachos</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Camp Cookout</td>
-                <td class="compact-nearby">Kiddy Hawk</td>
-                <td class="compact-food">🍔 Tenders, cheeseburgers, hot dogs, fries</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Panda Express</td>
-                <td class="compact-nearby">Kiddy Hawk</td>
-                <td class="compact-food">🥡 Orange chicken, kung pao chicken, broccoli beef</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Sharky's Grille</td>
-                <td class="compact-nearby">Kiddy Hawk</td>
-                <td class="compact-food">🍔 Tenders, cheeseburgers, hot dogs, pizza, fries</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Beach Bites</td>
-                <td class="compact-nearby">Ricochet</td>
-                <td class="compact-food">🍤 Fish and chips, shrimp, pretzels, soft-serve</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Harbor House</td>
-                <td class="compact-nearby">Ricochet</td>
-                <td class="compact-food">🍖 Pulled pork, ribs, burgers, wraps, salads</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Burrito Cafe</td>
-                <td class="compact-nearby">Vortex</td>
-                <td class="compact-food">🌯 Burritos, taco salad, loaded nachos, chips and salsa</td>
-              </tr>
-              <tr>
-                <td class="compact-name">Papa Luigi's</td>
-                <td class="compact-nearby">Vortex</td>
-                <td class="compact-food">🍕 Cheese and pepperoni pizza, breadsticks, meatball subs</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <div class="note">
